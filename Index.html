@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MC AI Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  </head>
+  <body>
+    <h1>Hello from MC AI!</h1>
+    <button onclick="showUser()">Show User Info</button>
+
+    <script>
+      function showUser() {
+        const user = Telegram.WebApp.initDataUnsafe.user;
+        if (user) {
+          alert(`Hello ${user.first_name} (@${user.username})`);
+        } else {
+          alert('Could not get user info.');
+        }
+      }
+      Telegram.WebApp.ready();
+    </script>
+  </body>
+</html>
